@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fuck the Fear</title>
+  <style>
+    :root{--bg:#f6f6f5;--ink:#111;--muted:#6b6b6b;--accent:#C3922E;}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family: ui-serif, Georgia, 'Times New Roman', serif; line-height:1.6}
+    .wrap{max-width:760px;margin:0 auto;padding:48px 20px}
+    header{margin:0 0 28px;text-align:center}
+    h1{font-weight:600;letter-spacing:.2px;margin:0 0 6px;font-size:2rem}
+    .lead{color:var(--muted);font-size:1rem;margin:0}
+    .card{background:#fff;border:1px solid #e6e6e4;border-radius:16px;padding:22px;margin:18px 0;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+    .quote{font-style:italic;margin:12px 0 0;color:var(--muted);text-align:center}
+    .cta{display:inline-block;margin-top:12px;padding:12px 18px;border-radius:999px;text-decoration:none;border:1px solid var(--ink);}
+    .cta:hover{background:#111;color:#fff}
+    .grid{display:grid;gap:20px;align-items:start}
+    @media(min-width:760px){.grid{grid-template-columns:1.1fr .9fr}}
+    footer{margin-top:32px;text-align:center;color:var(--muted);font-size:.9rem}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Fuck the Fear</h1>
+      <p class="lead">A quiet book about fear, awareness, and the space between both.</p>
+    </header>
+
+    <section class="card grid">
+      <div>
+        <p>This book was written slowly.<br>
+        Between fear and calm, between breath and silence.<br>
+        Not to teach courage — but to listen to what happens when fear stays.</p>
+        <p><a class="cta" href="https://payhip.com" target="_blank" rel="noopener">Buy the book on Payhip</a></p>
+      </div>
+      <div>
+        <!-- Optional cover placeholder -->
+        <div style="aspect-ratio:3/4;background:#000;display:flex;align-items:center;justify-content:center;border-radius:8px;">
+          <div style="width:56%;aspect-ratio:1;background:#000;position:relative;box-shadow:0 0 0 4px #000 inset">
+            <div style="position:absolute;inset:0;display:grid;place-items:center;">
+              <div style="width:22%;aspect-ratio:1;border-radius:50%;background:#C3922E;"></div>
+            </div>
+          </div>
+        </div>
+        <p class="quote">“Courage is not the absence of fear. It’s living with it.”</p>
+      </div>
+    </section>
+
+    <footer>© 2025 Fuck the Fear</footer>
+  </div>
+</body>
+</html>
