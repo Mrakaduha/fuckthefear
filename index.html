@@ -163,29 +163,40 @@
         <p class="hint" style="margin-top:12px">I dare to ask for an email to deliver the PDF. If you prefer not to, there's a direct download link in the footer.</p>
       </section>
 
-      <!-- Gaps -->
-      <section class="card" aria-labelledby="gaps-title">
-        <h2 id="gaps-title" class="title">Gaps</h2>
-        <figure class="card-hero">
-          <img src="assets/floating-shape.png" alt="Floating Shape chart" />
-        </figure>
-        
-        <p class="desc">Little practices to help you when stuck, looped, or taken.</p>
-        <div class="gaps-list" style="margin-top:10px;">
-          <div class="tech" id="tech-floating">
-            <p class="name">The Floating Shape</p>
-            <p class="small">A visual exercise to relax the eyes and widen the mind.</p>
-            <p class="muted-center" style="margin-top:8px"><a href="#tech1" class="btn btn-ghost">Read more</a></p>
-          </div>
+      <!-- GAPS column — replace existing Gaps card with this -->
+<div class="card col-gaps">
+  <!-- hero = obálka, klikací pro download tiskové verze -->
+  <figure class="card-hero card-hero-cover">
+    <a href="/mnt/data/Gap.png" download="Floating-Shape-highres.png" title="Download high-res printable chart">
+      <img src="assets/floating-shape.png" alt="Cover: The Floating Shape (printable chart)" />
+    </a>
+  </figure>
 
-          <div class="tech" id="tech-placeholder">
-            <p class="name">More soon</p>
-            <p class="small">New tiny practices will appear here occasionally — reasons to return and reasons to breathe.</p>
-          </div>
-        </div>
+  <!-- krátká pobídka/teaser (jenom tohle vidět nahoře pod obálkou) -->
+  <div class="card-body short-teaser">
+    <p><strong>The Floating Shape</strong><br>
+    A visual exercise to relax the eyes and widen the mind.</p>
+  </div>
 
-        <p class="hint" style="margin-top:10px">Want to be notified when a new technique appears? Use the download form or join the newsletter.</p>
-      </section>
+  <!-- akce: read more (vede na stránku / modal) -->
+  <div class="card-actions">
+    <a class="btn" href="/gaps/floating-shape.html">Read more</a>
+  </div>
+
+  <!-- spodní pás: podrobný popis a další karty (přesunuto sem) -->
+  <div class="card-bottom">
+    <div class="card-fulltext">
+      <h4>The Floating Shape</h4>
+      <p>A visual exercise to relax the eyes and widen the mind. How to use it: print the two columns of shapes or view them on-screen. Soften your gaze. After a few breaths, you may see a third shape appear between them. Let it be. Hold gently. A short practice — 30 seconds to two minutes — that relaxes eyes and creates a small internal gap.</p>
+    </div>
+
+    <div class="card-small">
+      <h5>More soon</h5>
+      <p>New tiny practices will appear here occasionally — reasons to return and reasons to breathe.</p>
+    </div>
+  </div>
+</div>
+
     </main>
 
     <!-- optional longer content (anchors) -->
