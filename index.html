@@ -1,53 +1,210 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Fuck the Fear</title>
+  <meta name="description" content="Fuck the Fear — book, breath practices, and small techniques for creating gaps." />
   <style>
-    :root{--bg:#f6f6f5;--ink:#111;--muted:#6b6b6b;--accent:#C3922E;}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family: ui-serif, Georgia, 'Times New Roman', serif; line-height:1.6}
-    .wrap{max-width:760px;margin:0 auto;padding:48px 20px}
-    header{margin:0 0 28px;text-align:center}
-    h1{font-weight:600;letter-spacing:.2px;margin:0 0 6px;font-size:2rem}
-    .lead{color:var(--muted);font-size:1rem;margin:0}
-    .card{background:#fff;border:1px solid #e6e6e4;border-radius:16px;padding:22px;margin:18px 0;box-shadow:0 2px 12px rgba(0,0,0,.04)}
-    .quote{font-style:italic;margin:12px 0 0;color:var(--muted);text-align:center}
-    .cta{display:inline-block;margin-top:12px;padding:12px 18px;border-radius:999px;text-decoration:none;border:1px solid var(--ink);}
-    .cta:hover{background:#111;color:#fff}
-    .grid{display:grid;gap:20px;align-items:start}
-    @media(min-width:760px){.grid{grid-template-columns:1.1fr .9fr}}
-    footer{margin-top:32px;text-align:center;color:var(--muted);font-size:.9rem}
+    /* --- Palette & basic typographic choices --- */
+    :root{
+      --bg: #F5F5F3;
+      --text:#111111;
+      --muted:#666666;
+      --accent:#C3922E; /* ochre */
+      --black:#000000;
+      --container:700px;
+    }
+    html,body{height:100%;margin:0;background:var(--bg);color:var(--text);font-family:"Garamond",Georgia,serif;line-height:1.5}
+    .wrap{max-width:var(--container);margin:28px auto;padding:28px}
+    header{display:flex;align-items:center;gap:18px}
+    /* motif: black square + ochre dot */
+    .motif{width:56px;height:56px;display:inline-block;position:relative;background:var(--black);border-radius:4px;flex:0 0 56px}
+    .motif::after{content:"";position:absolute;width:12px;height:12px;border-radius:50%;background:var(--accent);right:8px;bottom:8px}
+    h1{font-size:2.1rem;margin:0;font-weight:400;letter-spacing:0.2px}
+    p.lead{margin:6px 0 0;color:var(--muted);font-size:0.95rem}
+    main{margin-top:28px;display:grid;gap:20px}
+    .card{background:white;border-radius:12px;padding:18px;border:1px solid rgba(0,0,0,0.06);box-shadow:0 6px 20px rgba(0,0,0,0.03)}
+    .title{font-size:1.05rem;margin:0 0 6px;font-weight:600}
+    .desc{color:var(--muted);margin:0 0 12px}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700;letter-spacing:0.2px}
+    .btn-primary{background:var(--black);color:#fff}
+    .btn-ghost{background:transparent;color:var(--black);border:1px solid rgba(0,0,0,0.08)}
+    .small{font-size:0.86rem;color:var(--muted)}
+    /* grid for the three main cards on wide screens */
+    @media(min-width:820px){
+      main.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    }
+    /* Gaps list */
+    .gaps-list{display:grid;gap:12px}
+    .tech{padding:12px;background:#faf9f7;border-radius:10px;border:1px solid rgba(0,0,0,0.03)}
+    .tech .name{font-weight:600;margin:0 0 6px}
+    footer{margin-top:26px;color:var(--muted);font-size:0.88rem;text-align:center}
+    /* small modal / inline form */
+    .modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.35);padding:20px;visibility:hidden;opacity:0;transition:opacity .18s,visibility .18s}
+    .modal.show{visibility:visible;opacity:1}
+    .modal-card{background:white;padding:18px;border-radius:12px;max-width:420px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,0.3)}
+    form{display:flex;gap:10px;align-items:center}
+    input[type="email"]{flex:1;padding:10px 12px;border-radius:8px;border:1px solid #e6e6e6;font-size:1rem}
+    .hint{font-size:0.82rem;color:var(--muted);margin-top:8px}
+    .muted-center{text-align:center;color:var(--muted)}
+    /* accessible focus */
+    a:focus,button:focus,input:focus{outline:3px solid rgba(195,146,46,0.18);outline-offset:2px}
   </style>
 </head>
 <body>
   <div class="wrap">
     <header>
-      <h1>Fuck the Fear</h1>
-      <p class="lead">A quiet book about fear, awareness, and the space between both.</p>
-    </header>
-
-    <section class="card grid">
+      <div class="motif" aria-hidden="true"></div>
       <div>
-        <p>This book was written slowly.<br>
-        Between fear and calm, between breath and silence.<br>
-        Not to teach courage — but to listen to what happens when fear stays.</p>
-        <p><a class="cta" href="https://fuckthefear.net/b/zbREc" target="_blank" rel="noopener">Buy the book on Payhip</a></p>
+        <h1>Fuck the Fear</h1>
+        <p class="lead">A small project about fear, breath, and the space between.</p>
       </div>
-      <div>
-        <!-- Optional cover placeholder -->
-        <div style="aspect-ratio:3/4;background:#000;display:flex;align-items:center;justify-content:center;border-radius:8px;">
-          <div style="width:56%;aspect-ratio:1;background:#000;position:relative;box-shadow:0 0 0 4px #000 inset">
-            <div style="position:absolute;inset:0;display:grid;place-items:center;">
-              <div style="width:22%;aspect-ratio:1;border-radius:50%;background:#C3922E;"></div>
-            </div>
+    </header>
+<section class="intro-text" style="margin-top: 32px; margin-bottom: 32px;">
+  <p style="margin: 0 0 1.2em; font-size: 1.05rem; line-height: 1.55;">
+    Throughout life, you never stay the same even in two consecutive days. Your body replaces itself in countless ways, and only two things stay with you from birth to death: your fear and your breath. And so long as you remain in the current of life, the current decides for you. If you want to choose for yourself you must look for the gaps — for only in a gap can you set a direction of your own, before the current claims you again.
+  </p>
+
+</section>
+
+
+    <main class="grid-3" role="main">
+      <!-- Book -->
+      <section class="card" aria-labelledby="book-title">
+        <h2 id="book-title" class="title">Fear</h2>
+        <p class="desc">Epiphanies, observations, and practices collected in troubled moments and processed in quiet ones.</p>
+        <p class="small">PDF / ePub. Read at your own pace.</p>
+        <div style="margin-top:12px;">
+          <a class="btn btn-ghost" href="#book-more" style="margin-left:8px">Sample</a>
+          <a class="btn btn-primary" href="https://payhip.com/your-payhip-product" target="_blank" rel="noopener">Buy</a>
+        </div>
+      </section>
+
+      <!-- Breath -->
+      <section class="card" aria-labelledby="breath-title">
+        <h2 id="breath-title" class="title">Breath</h2>
+        <p class="desc">If fear is a swamp, breath is the stream. The most powerful tool — at your service anytime. Tested on humans.</p>
+        <p class="small">The foundation behind many of the practices in the book.</p>
+        <div style="margin-top:12px;">
+          <button id="openDownload" class="btn btn-primary">Download PDF (free)</button>
+        </div>
+        <p class="hint" style="margin-top:12px">I dare to ask for an email to deliver the PDF. If you prefer not to, there's a direct download link in the footer.</p>
+      </section>
+
+      <!-- Gaps -->
+      <section class="card" aria-labelledby="gaps-title">
+        <h2 id="gaps-title" class="title">Gaps</h2>
+        <p class="desc">Little practices to help you when stuck, looped, or taken.</p>
+
+        <div class="gaps-list" style="margin-top:10px;">
+          <div class="tech" id="tech-floating">
+            <p class="name">The Floating Shape</p>
+            <p class="small">A visual exercise to relax the eyes and widen the mind.</p>
+            <p class="muted-center" style="margin-top:8px"><a href="#tech1" class="btn btn-ghost">Read more</a></p>
+          </div>
+
+          <div class="tech" id="tech-placeholder">
+            <p class="name">More soon</p>
+            <p class="small">New tiny practices will appear here occasionally — reasons to return and reasons to breathe.</p>
           </div>
         </div>
-        <p class="quote">“Courage is not the absence of fear. It’s living with it.”</p>
-      </div>
-    </section>
 
-    <footer>© 2025 Fuck the Fear</footer>
+        <p class="hint" style="margin-top:10px">Want to be notified when a new technique appears? Use the download form or join the newsletter.</p>
+      </section>
+    </main>
+
+    <!-- optional longer content (anchors) -->
+    <div style="margin-top:22px">
+      <section id="book-more" class="card" style="margin-bottom:12px">
+        <h3 class="title">About the book</h3>
+        <p class="desc">Fuck the Fear explores fear as a natural companion. The book offers practices, short essays and simple designs for daily attention. Minimalist layout, practical items, and an invitation to write your own book.</p>
+      </section>
+
+      <section id="breath-more" class="card" style="margin-bottom:12px">
+        <h3 class="title">Breath</h3>
+        <p class="desc">Inside: short guided exercises with clear explanations — why they work, when they don’t, and how to adapt them to yourself. Practical. Immediately usable.</p>
+      </section>
+
+      <section id="tech1" class="card">
+        <h3 class="title">The Floating Shape</h3>
+        <p class="desc">Set the chart perpendicular to your face and look at it with crossed eyes, i.e. the right eye rest on the left column and the left one on the right column. Distance: about 80 cm. This way of looking creates a cognitive dissonance in the visual center of the brain: Is it red? Or is it blue?
+The gap ensues from this.</p>
+        <p class="small">More about it: <a href="https://pennington-training.com/2-uncategorised/95-maretials-on-the-tables-of-chartres." target="_blank" rel="noopener">George Pennigton</a></p>
+      </section>
+    </div>
+
+    <footer>
+      <p class="small">Created by Jirka. Fear stays. So does breath.</p>
+      <p class="small">Direct download: <a href="/breath.pdf" class="small" download>breath.pdf</a></p>
+    </footer>
   </div>
+
+  <!-- Modal for email capture + download (client-side) -->
+  <div id="modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-card">
+      <h3 style="margin:0 0 8px">Get the Breath PDF</h3>
+      <p class="small" style="margin:0 0 12px">Enter your email and you'll immediately get the PDF download here. (To collect emails centrally, replace this client-side handler with a real form endpoint.)</p>
+
+      <form id="downloadForm">
+        <input id="email" type="email" required placeholder="your@email.example" aria-label="email" />
+        <button type="submit" class="btn btn-primary">Send & Download</button>
+      </form>
+      <p class="hint">Or <a id="directDl" href="/breath.pdf" download>download directly</a>.</p>
+      <p style="text-align:right;margin-top:8px"><button id="closeModal" class="btn btn-ghost">Close</button></p>
+    </div>
+  </div>
+
+  <script>
+    /* Simple client-side behavior:
+       - opens modal on "Download PDF"
+       - on submit: saves email to localStorage (so you can access it later in the browser)
+         and triggers direct download of /breath.pdf
+       - NOTE: to collect emails for real, integrate with Formspree / Mailchimp / ConvertKit
+               and replace the JS with form action to that service (or call an API).
+    */
+
+    const openBtn = document.getElementById('openDownload');
+    const modal = document.getElementById('modal');
+    const closeBtn = document.getElementById('closeModal');
+    const form = document.getElementById('downloadForm');
+    const emailInput = document.getElementById('email');
+    const directDl = document.getElementById('directDl');
+
+    function showModal(){ modal.classList.add('show'); modal.setAttribute('aria-hidden','false'); emailInput.focus() }
+    function hideModal(){ modal.classList.remove('show'); modal.setAttribute('aria-hidden','true') }
+
+    openBtn.addEventListener('click', showModal);
+    closeBtn.addEventListener('click', hideModal);
+    modal.addEventListener('click', (ev)=>{
+      if(ev.target === modal) hideModal();
+    });
+
+    form.addEventListener('submit', (ev)=>{
+      ev.preventDefault();
+      const mail = emailInput.value.trim();
+      if(!mail) return;
+      try{
+        // Save locally so you can extract for now
+        let saved = JSON.parse(localStorage.getItem('ftf_emails')||'[]');
+        saved.push({email: mail, date: new Date().toISOString()});
+        localStorage.setItem('ftf_emails', JSON.stringify(saved));
+      }catch(e){
+        // ignore localStorage failures
+      }
+      // trigger download (assumes /breath.pdf exists in the same repo)
+      window.location.href = '/breath.pdf';
+      hideModal();
+      // Clear input for next time
+      emailInput.value = '';
+      // small courtesy: show a console note so you can inspect in the browser
+      console.info('email saved locally (replace with server integration for real collection)');
+    });
+
+    // accessibility: close modal on ESC
+    window.addEventListener('keydown', (e)=>{
+      if(e.key === 'Escape') hideModal();
+    });
+  </script>
 </body>
 </html>
