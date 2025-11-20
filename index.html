@@ -148,56 +148,61 @@
 </section>
 
 
-    <main class="grid-3" role="main">
-      <!-- Book -->
-      <section class="card" aria-labelledby="book-title">
-        <h2 id="book-title" class="title">Fear</h2>
-        <figure class="card-hero">
-          <img src="assets/ftf-cover.png" alt="Cover of Fuck the Fear" />
-        </figure>
-        <p class="desc">Epiphanies, observations, and practices collected in troubled moments and processed in quiet ones.</p>
-        <p class="small">PDF / ePub. Read at your own pace.</p>
-        <div style="margin-top:12px;">
-          <a class="btn btn-ghost" href="#book-more" style="margin-left:8px">Sample</a>
-          <a class="btn btn-primary" href="https://payhip.com/your-payhip-product" target="_blank" rel="noopener">Buy</a>
-        </div>
-      </section>
+   <!-- ===== unified three-column cards (Fear / Breath / Gaps) ===== -->
+<div class="cards-row">
 
-      <!-- Breath -->
-      <section class="card" aria-labelledby="breath-title">
-        <h2 id="breath-title" class="title">Breath</h2>
-        <figure class="card-hero">
-          <img src="assets/breath-cover.png" alt="Cover of Breath" />
-        </figure>
+  <!-- FEAR -->
+  <div class="col">
+    <h3>Fear</h3>
+    <div class="card col-fear">
+      <figure class="card-hero">
+        <img src="assets/ftf-cover.png" alt="Cover: Fuck the Fear" />
+      </figure>
+      <div class="card-body">
+        <p>Epiphanies, observations, and practices collected in troubled moments and processed in quiet ones.</p>
+      </div>
+      <div class="card-actions">
+        <a class="btn btn-sample" href="/pdf/FTFsample.pdf">Sample</a>
+        <a class="btn btn-buy" href="https://payhip-link">Buy</a>
+      </div>
+    </div>
+  </div>
 
-        <p class="desc">If fear is a swamp, breath is the stream. The most powerful tool — at your service anytime. Tested on humans.</p>
-        <p class="small">The foundation behind many of the practices in the book.</p>
-        <div style="margin-top:12px;">
-          <button id="openDownload" class="btn btn-primary">Download PDF (free)</button>
-        </div>
-        <p class="hint" style="margin-top:12px">I dare to ask for an email to deliver the PDF. If you prefer not to, there's a direct download link in the footer.</p>
-      </section>
+  <!-- BREATH -->
+  <div class="col">
+    <h3>Breath</h3>
+    <div class="card col-breath">
+      <figure class="card-hero">
+        <img src="assets/breath-cover.png" alt="Cover: Breath" />
+      </figure>
+      <div class="card-body">
+        <p>If fear is a swamp, breath is the stream. The most powerful tool — at your service anytime. Tested on humans.</p>
+      </div>
+      <div class="card-actions">
+        <a class="btn btn-download" href="/pdf/breath.pdf" download>Download PDF (free)</a>
+      </div>
+    </div>
+  </div>
 
-  <!-- GAPS column: obálka + krátký popis + dvě akce (More + Get) -->
-      <h3>Gaps</h3>
-  <div class="card col-gaps">
+  <!-- GAPS -->
+  <div class="col">
+    <h3>Gaps</h3>
+    <div class="card col-gaps">
       <figure class="card-hero">
         <img src="assets/floating-shape.png" alt="Cover: The Floating Shape chart" />
       </figure>
-
-  <div class="card-body">
-    <p><strong>The Floating Shape</strong><br>
-    A short visual exercise to calm the eyes and open a small inner gap.</p>
+      <div class="card-body">
+        <p><strong>The Floating Shape</strong><br>A short visual exercise to calm the eyes and open a small inner gap.</p>
+      </div>
+      <div class="card-actions">
+        <a class="btn" href="/gaps/floating-shape.html">More</a>
+        <a class="btn btn-download" href="/mnt/data/Gap.png" download="Floating-Shape-highres.png">Get</a>
+      </div>
+    </div>
   </div>
 
-  <div class="card-actions">
-    <!-- More = detail technique page -->
-    <a class="btn" href="/gaps/floating-shape.html">More</a>
-
-    <!-- Get = download high-resolution version -->
-    <a class="btn btn-download" href="/mnt/data/Gap.png" download="Floating-Shape-highres.png">Get</a>
-  </div>
 </div>
+<!-- ===== end unified block ===== -->
 
 
     </main>
