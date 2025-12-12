@@ -1,0 +1,180 @@
+/* =========================================
+   Fuck the Fear — CLEAN BASE STYLESHEET
+========================================= */
+
+/* VARIABLES */
+:root {
+  --bg: #F5F5F3;
+  --text: #111;
+  --muted: #666;
+  --accent: #C3922E;
+  --black: #000;
+  --container: 980px;
+  --card-hero-h: 320px;
+}
+
+/* RESET */
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Garamond", Georgia, serif;
+  line-height: 1.55;
+}
+
+/* LAYOUT */
+.wrap {
+  max-width: var(--container);
+  margin: 28px auto;
+  padding: 28px;
+}
+
+main.grid-3 {
+  margin-top: 28px;
+}
+
+@media (min-width: 820px) {
+  main.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+    gap: 24px;
+    align-items: start;
+  }
+}
+
+/* HEADER */
+.motif {
+  width: 56px;
+  height: 56px;
+  background: var(--black);
+  position: relative;
+  border-radius: 4px;
+}
+
+header {
+  display: flex;
+  align-items: center;   /* vertikálně zarovná logo a text */
+  gap: 18px;
+  margin-bottom: 16px;   /* jemný spodní odstup */
+}
+
+header h1 {
+  margin: 0;             /* odstraníme defaultní horní margin */
+  line-height: 1.1;      /* opticky stejná výška jako původně */
+}
+
+header .lead {
+  margin: 4px 0 0 0;     /* jemný odstup od titulku dolů */
+  font-size: 1.0rem;
+  color: var(--muted);
+}
+
+.motif::after {
+  content: "";
+  width: 12px;
+  height: 12px;
+  background: var(--accent);
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  border-radius: 50%;
+}
+
+/* CARDS */
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 18px;
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.03);
+  display: flex;
+  flex-direction: column;
+}
+
+.card-body {
+  flex: 1 1 auto;
+  margin-bottom: 12px;
+}
+
+/* HERO */
+figure.card-hero {
+  height: var(--card-hero-h);
+  min-height: var(--card-hero-h);
+  flex: 0 0 var(--card-hero-h);
+  margin: 6px 0 0 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+figure.card-hero img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* TITLES */
+.title {
+  text-align: center;
+  margin: 0 0 6px;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.desc {
+  color: var(--muted);
+}
+
+/* ACTIONS */
+.card-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+/* BUTTONS */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.btn-primary { background: var(--black); color: #fff; }
+.btn-ghost { border: 1px solid rgba(0,0,0,0.15); }
+.btn-solid { background: var(--black); color:#fff; }
+.btn-outline { border: 1px solid rgba(0,0,0,0.15); }
+
+/* FOOTER */
+.footer-small {
+  text-align: center;
+  margin-top: 32px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.email-form {
+  display:flex;
+  gap:10px;
+  align-items:center;
+  margin-top:12px;
+  flex-wrap:wrap;
+}
+.email-form input[type="email"]{
+  padding:8px 10px;
+  border-radius:8px;
+  border:1px solid rgba(0,0,0,0.10);
+  min-width:220px;
+  font-family: inherit;
+}
+.email-form .email-hint{
+  width:100%;
+  color:var(--muted);
+  font-size:0.9rem;
+  margin-top:8px;
+}
+.visually-hidden { position:absolute!important; height:1px; width:1px; overflow:hidden; clip:rect(1px,1px,1px,1px); white-space:nowrap; }
+
