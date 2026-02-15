@@ -136,13 +136,27 @@
           </a>, have printed it for myself on little cards and been using it for ages.
         </p>
         <!-- EMAIL FORM — MAILTO fallback (simple) -->
-        <form id="email-form-mailto" class="email-form">
+        <form action="https://formspree.io/f/mzdddljb" method="POST" class="email-form">
+          <input type="hidden" name="_language" value="en">
+          <input type="hidden" name="_redirect" value="https://fuckthefear.net/">
+
           <label for="email-input" class="visually-hidden">Your email</label>
-          <input id="email-input" name="email" type="email" placeholder="your@email.com" required
-            autocomplete="email" />
-          <button type="submit" class="btn btn-primary">Leave your email</button>
-          <p class="email-hint">If you’d like to receive new gap techniques as they appear, leave your email address. No
-            routine newsletters — just small techniques occasionally.</p>
+          <input 
+            id="email-input" 
+            name="email" 
+            type="email" 
+            placeholder="your@email.com" 
+            required 
+            autocomplete="email" 
+          />
+          <button type="submit" class="btn btn-primary">
+            Leave your email
+          </button>
+
+          <p class="email-hint">
+            If you’d like to receive new gap techniques as they appear, leave your email address.
+            No routine newsletters — just small techniques occasionally.
+          </p>
         </form>
 
       </section>
