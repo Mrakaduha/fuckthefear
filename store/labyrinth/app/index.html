@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Labyrinth</title>
+<link rel="stylesheet" href="style.css">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#000000">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+<div id="labyrinth">
+
+  <img src="labyrinth.svg" id="labyrinthImage">
+
+  <svg id="ballLayer" viewBox="0 0 730 730"></svg>
+
+</div>
+
+<button id="startButton">Start</button>
+<button id="settingsButton">Settings</button>
+<button id="getButton">Get</button>
+
+<div id="overlay"></div>
+
+<div id="settingsPanel">
+
+<label>
+Journey time (minutes)
+<input id="journeyInput" type="number" value="3" min="1" max="20">
+</label>
+
+<label>
+Pause (seconds)
+<input id="pauseInput" type="number" value="5" min="0" max="60">
+</label>
+
+<label>
+Ball color
+<input id="ballColorInput" type="color" value="#c49a3a">
+</label>
+
+<label>
+Background
+<input id="bgColorInput" type="color" value="#000000">
+</label>
+
+<button id="resetButton">Reset</button>
+
+</div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

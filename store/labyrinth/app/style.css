@@ -1,0 +1,121 @@
+
+body {
+  margin: 0;
+  background: #000;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+#labyrinth {
+  width: min(90vw, 600px);
+  position: relative;
+  margin: 20px auto 0;
+}
+
+#labyrinth svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+#labyrinth img {
+  display: block;
+  width: 100%;
+}
+
+#ballLayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  pointer-events: none;
+}
+
+button {
+  margin-top: 16px;
+  padding: 14px 32px;
+  font-size: 16px;
+  cursor: pointer;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #e6e6e6;
+  color: #000;
+
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: #f2f2f2;
+}
+
+#settingsPanel {
+  display: none;
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  padding: 24px;
+
+  background: #111;
+  color: white;
+
+  border-radius: 12px;
+
+  width: min(90vw, 420px);
+  box-sizing: border-box;
+}
+
+#settingsPanel label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 16px 0;
+  font-size: 18px;
+}
+
+#settingsPanel input {
+  margin-left: 12px;
+  font-size: 18px;
+  padding: 6px 8px;
+}
+
+#settingsPanel label {
+  gap: 12px;
+}
+
+#settingsPanel input {
+  width: 80px;
+  text-align: right;
+}
+
+#settingsPanel input[type="color"] {
+  width: 40px;
+  height: 32px;
+  padding: 0;
+  border: none;
+}
+
+#settingsPanel button {
+  margin-top: 20px;
+  width: 100%;
+}
+
+button {
+  margin-top: 12px;
+}
+
+#overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: transparent;
+}
