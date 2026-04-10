@@ -1,4 +1,10 @@
-// script.js — jednoduché, bezpečné chování tlačítek
+//přesměruje tlačítko play 
+  function startLabyrinth() {
+  const iframe = document.querySelector('.gaps-frame');
+  iframe.contentWindow.postMessage("start", "*");
+}
+
+  // script.js — jednoduché, bezpečné chování tlačítek
 document.addEventListener('DOMContentLoaded', () => {
   // Utility: stáhne nebo otevře soubor (pokud je cross-origin, otevře v nové záložce)
   function triggerFileAction(url, suggestedFilename) {
@@ -75,9 +81,10 @@ document.addEventListener('DOMContentLoaded', () => {
         focused.click();
       }
     }
+  });
+
 
   // email-form mailto handler
-  document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('email-form-mailto');
     if (!form) return;
     form.addEventListener('submit', (ev) => {
@@ -101,4 +108,4 @@ document.addEventListener('DOMContentLoaded', () => {
       form.querySelector('.email-hint').textContent = 'Your email client should open — please send the message to subscribe.';
     });
   });
-
+  

@@ -97,6 +97,7 @@ header .lead {
   margin-bottom: 12px;
 }
 
+
 /* HERO */
 figure.card-hero {
   height: var(--card-hero-h);
@@ -114,6 +115,19 @@ figure.card-hero img {
   object-fit: contain;
   display: block;
 }
+
+.card-hero:has(.gaps-frame) {
+  padding: 0;
+  display: block;
+}
+
+.gaps-frame {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
 
 /* TITLES */
 .title {

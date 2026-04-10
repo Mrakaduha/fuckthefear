@@ -1,0 +1,48 @@
+/* reset */
+html, body {
+  margin: 0;
+  height: 100%;
+  background: #000;
+}
+
+/* layout */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* container */
+.labyrinth {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* image */
+.labyrinth img {
+  width: 90%;
+  height: auto;
+  display: block;
+}
+
+.stage {
+  position: relative;
+  width: 90%;
+}
+
+.stage img {
+  width: 100%;
+  display: block;
+}
+
+#ballLayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
